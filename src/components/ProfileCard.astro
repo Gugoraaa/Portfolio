@@ -1,0 +1,29 @@
+---
+const name = "Gustavo Gonzalez";
+const description = "I'm a passionate FullStack developer.";
+const avatarUrl = "/gus.png"; // Asegúrate de que la imagen exista en /public
+---
+
+<div class="flex items-center gap-8 bg-[#1F2937] p-8 rounded-2xl  max-w-3xl mx-auto max-h-3xl min-h-[300px]">
+  <!-- Avatar grande -->
+  <div class="w-48 h-48 rounded-full overflow-hidden bg-[#2B3544] flex items-center justify-center border-6 border-[#171E2D] ">
+    <img
+      src={avatarUrl}
+      alt={name}
+      class="w-full h-full object-cover mt-15"
+    />
+  </div>
+
+  <!-- Texto -->
+  <div>
+    <h1 class="text-3xl font-bold text-white">{name}</h1>
+    <p class="text-gray-300 text-lg mt-1">{description}</p>
+
+    <button class="mt-4 inline-flex items-center gap-2 bg-emerald-500 text-white px-5 py-2 rounded-full font-semibold hover:bg-emerald-600 transition">
+      Looking for job
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6m0 0v6m0-6L10 14"/>
+      </svg>
+    </button>
+  </div>
+</div>

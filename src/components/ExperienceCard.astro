@@ -1,0 +1,40 @@
+---
+const company = "Coppel";
+const position = "Intern – Software Engineer (Full Stack Developer)";
+const period = "February 2024 – May 2024";
+const internshipType = "Unpaid internship";
+
+const items = [
+  "Improved and optimized PostgreSQL functions to enhance database performance and data retrieval efficiency.",
+  "Developed and maintained features for the Sistema Integral de Exhibición (SIE), a platform managing product displays across multiple stores.",
+  "Built and integrated a full-stack web application with Angular and TypeScript for the front-end and PHP for the backend.",
+  "Deployed and managed cloud-based services on Microsoft Azure, ensuring scalability, security, and performance.",
+  "Collaborated with cross-functional teams to implement new system features and optimize existing workflows.",
+];
+
+const skills = ["PostgreSQL", "Angular", "TypeScript", "PHP", "Azure"];
+---
+
+<section class="text-white max-w-3xl mx-auto my-10">
+  <!-- Header -->
+  <h1 class="text-3xl font-bold mb-4">Experience</h1>
+  <div class="flex justify-between items-start mb-2">
+    <div>
+      <h3 class="text-xl font-bold">{company}</h3>
+      <p class="italic text-white/80">{position}</p>
+      <p class="text-sm text-white/60 italic">({internshipType})</p>
+    </div>
+    <span class="text-sm text-white/60">{period}</span>
+  </div>
+
+  <!-- Responsibilities -->
+  <ul class="list-disc pl-5 space-y-2 text-gray-200">
+        {items.map(item => (
+            <li set:html={item} />
+        ))}
+   </ul>
+
+
+  <!-- Skills -->
+  <p class="mt-4"><span class="font-semibold text-white">Skills:</span> {skills.join(", ")}</p>
+</section>
