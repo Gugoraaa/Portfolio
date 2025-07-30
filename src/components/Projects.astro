@@ -1,0 +1,15 @@
+---
+import ProjectCard from "./ProjectCard.astro"
+
+---
+<h1 class="text-3xl font-bold mb-10 text-white">Projects</h1>
+<ProjectCard
+  title="Chef Ops"
+  description="ChefOps is a kitchen order management application designed to help restaurants manage and track orders by status (Queued, Cooking, Completed, Canceled) in real time."
+  link="https://chef-ops.vercel.app/"
+  icons={[
+    { src: "/icons/react.svg", alt: "React" },
+    { src: "/icons/tailwind.png", alt: "Tailwind" },
+    { src: "/icons/typescript.png", alt: "TypeScript" }
+  ]}
+/>

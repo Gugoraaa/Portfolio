@@ -1,24 +1,23 @@
 ---
+import { Image } from "astro:assets";
 const techStack = {
-  "Frontend": [
+  "Languages": [
     { name: "HTML5", icon: "/icons/html-5.png" },
     { name: "CSS3", icon: "/icons/css-3.png" },
     { name: "JavaScript", icon: "/icons/javascript.png" },
     { name: "TypeScript", icon: "/icons/typescript.png" },
-    { name: "React", icon: "/icons/react.svg" },
-    { name: "Tailwind", icon: "/icons/tailwind.png" },
-    { name: "Astro", icon: "/icons/Astro.png" },
-    { name: "Vite", icon: "/icons/vite.png" }
-  ],
-  "Backend / DB": [
-    { name: "Node.js", icon: "/icons/nodejs.png" },
-    { name: "Express", icon: "/icons/express.png" },
-    { name: "PostgreSQL", icon: "/icons/postgresql.png" }   
-  ],
-  "Languages": [
     { name: "C++", icon: "/icons/cpp.png" },
     { name: "Python", icon: "/icons/python.png" },
     { name: "SQL", icon: "/icons/sql.png" }
+  ],
+  "Technologies": [
+    { name: "React", icon: "/icons/react.svg" },
+    { name: "Tailwind", icon: "/icons/tailwind.png" },
+    { name: "Astro", icon: "/icons/Astro.png" },
+    { name: "Vite", icon: "/icons/vite.png" },
+    { name: "Node.js", icon: "/icons/nodejs.png" },
+    { name: "PostgreSQL", icon: "/icons/postgresql.png" },   
+    { name: "Express", icon: "/icons/express.png" },
   ],
   "Tools": [
     { name: "Git", icon: "/icons/git.png" },
@@ -27,7 +26,7 @@ const techStack = {
     { name: "VS Code", icon: "/icons/vscode.png" },
     { name: "Linux", icon: "/icons/linux.png" }
   ],
-  "Extras": [
+  "Other Skills": [
     { name: "Markdown", icon: "/icons/markdown.png" },
     { name: "Terminal", icon: "/icons/terminal.png" },
     { name: "NPM", icon: "/icons/npm.png" },
@@ -36,18 +35,25 @@ const techStack = {
 };
 ---
 
-<section class="max-w-5xl mx-auto pt-12  text-white">
+<section class="max-w-5xl mx-auto pt-12 text-white">
   <h1 class="text-3xl font-bold mb-10">Skills {"</>"}</h1>
 
   {Object.entries(techStack).map(([category, items]) => (
     <div class="mb-10">
       <h2 class="text-2xl font-semibold mb-4">{category}</h2>
-      <div class="flex gap-4 overflow-x-auto pb-2">
+      <div class="flex flex-wrap gap-4">
         {items.map(({ name, icon }) => (
           <div
-            class="flex-shrink-0 flex flex-col items-center justify-center p-4 rounded-lg hover:bg-white/5 transition transform hover:scale-110 duration-300"
+            class="flex flex-col items-center justify-center p-4 rounded-lg hover:bg-white/5 transition transform hover:scale-110 duration-300"
           >
-            <img src={icon} alt={name} class="w-6 h-6 mb-1" />
+            <Image
+              src={icon}
+              alt={name}
+              width={40}
+              height={40}
+              class="w-6 h-6 mb-1"
+              loading="lazy"
+            />
             <span class="text-xs font-medium text-center hidden md:block">{name}</span>
           </div>
         ))}
@@ -55,3 +61,4 @@ const techStack = {
     </div>
   ))}
 </section>
+

@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 const name = "Gustavo Gonzalez";
 const description = "I'm a passionate FullStack developer.";
 const avatarUrl = "/gus.png"; // Asegúrate de que la imagen exista en /public
@@ -6,13 +7,17 @@ const avatarUrl = "/gus.png"; // Asegúrate de que la imagen exista en /public
 
 <div class="flex items-center gap-8 bg-[#1F2937] p-8 rounded-2xl  max-w-3xl mx-auto max-h-3xl min-h-[300px]">
   <!-- Avatar grande -->
-  <div class="w-48 h-48 rounded-full overflow-hidden bg-[#2B3544] flex items-center justify-center border-6 border-[#171E2D] ">
-    <img
-      src={avatarUrl}
-      alt={name}
-      class="w-full h-full object-cover mt-15"
-    />
-  </div>
+  <div class="w-48 h-48 rounded-full overflow-hidden bg-[#2B3544] flex items-center justify-center border-[6px] border-[#171E2D]">
+  <Image
+    src={avatarUrl}
+    alt={name}
+    width={200}
+    height={200}
+    class="w-full h-full object-cover"
+    loading="eager"
+  />
+</div>
+
 
   <!-- Texto -->
   <div>
